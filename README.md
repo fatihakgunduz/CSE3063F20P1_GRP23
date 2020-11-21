@@ -3,7 +3,7 @@
 GROUP 23
 
 
-150118049 - Oğuzhan TOKER
+150118049 - Oğuzhan TOKER  
 
 150117032 - Fatih AKGÜNDÜZ 
 
