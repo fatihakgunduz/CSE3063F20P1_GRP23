@@ -20,4 +20,4 @@ GROUP 23
 
 ### Project UML
 
-![Alt text](UML_New.png?raw=true "Title")  
+![Alt text](UML_New.jpeg?raw=true "Title")  
