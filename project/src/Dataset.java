@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.*;
 public class Dataset {
 
@@ -16,10 +17,16 @@ public class Dataset {
 			this.datasetId = datasetId;
 			this.datasetName = datasetName;
 			this.maxLabelsPerInstance = maxLabelsPerInstance;
-		    this.labelList=  new ArrayList<Label>();
-	        this.instanceList=  new ArrayList<Instance>();
+		   
 	    }
 		
+	    
+	    public String getCurrentTimeStamp() {
+	        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
+	        Date now = new Date();
+	        String strDate = sdfDate.format(now);
+	        return strDate;
+	    }
 	    
 	    
 	    
