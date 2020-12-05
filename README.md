@@ -26,6 +26,3 @@ datasets can be used for the training of Artificial Intelligence models such as 
 models.
 
 
-### Project UML
-
-![Alt text](CSE3063F20P1_DCD_GRP1_iteration1.pdf?raw=true "Title")  
