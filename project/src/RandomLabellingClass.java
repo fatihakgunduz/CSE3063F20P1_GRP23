@@ -3,7 +3,7 @@ import java.util.*;
 
 public class RandomLabellingClass extends User {
 	
-	public RandomLabellingClass(int id, int password, String userName, String userType) {
+	public RandomLabellingClass(long id, long password, String userName, String userType) {
 		super(id, password, userName, userType);
 		// TODO Auto-generated constructor stub
 	}
@@ -15,7 +15,7 @@ public class RandomLabellingClass extends User {
 		int k = 0;
 		Label label = new Label();
 		
-		while(dataset.instanceList.size() != k && dataset.getInstanceList().get(k) != null) {
+		while(dataset.getInstanceList().size() != k && dataset.getInstanceList().get(k) != null) {
 			int i = 0;
 		
 			while(i < dataset.getMaxLabelsPerInstance()) {
@@ -34,15 +34,6 @@ public class RandomLabellingClass extends User {
 		}
 	}
 
- public void labelIt(Dataset dataset) {
-	 int x = dataset.instanceList.size();
-	 int y = dataset.labelList.size();
-	 for (int i = 0 ; i<x; i++) {
-		 for (int j =0 ; j<y ; j++) {
-			 
-		 }
-	 }
- }
 
 
 
