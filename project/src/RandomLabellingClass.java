@@ -3,8 +3,8 @@ import java.util.*;
 
 public class RandomLabellingClass extends User {
 	
-	public RandomLabellingClass(long id, long password, String userName, String userType) {
-		super(id, password, userName, userType);
+	public RandomLabellingClass(User user) {
+		super(user.getId(),user.getUserName(),user.getDatasetId());
 		// TODO Auto-generated constructor stub
 	}
 

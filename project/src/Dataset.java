@@ -7,6 +7,7 @@ public class Dataset {
 	      private long maxLabelsPerInstance;
 	      private ArrayList<Label> labelList = new ArrayList<Label>();
 	      private ArrayList<Instance> instanceList = new ArrayList<Instance>();
+	      private ArrayList<User> userList = new ArrayList<User>();
 		
 	      
 	     
@@ -75,14 +76,13 @@ public class Dataset {
 		public void setInstanceList(ArrayList<Instance> instanceList) {
 			this.instanceList = instanceList;
 		}
-	      
-	      
-	
-	
-	
-	
-	
-	
-	
-	
+		public void setDatasetId(long datasetId) {
+		this.datasetId = datasetId;
+		}
+		public ArrayList<User> getUserList() {
+		return userList;
+		}
+		public void setUserList(ArrayList<User> userList) {
+		this.userList = userList;
+		}
 }

@@ -1,16 +1,10 @@
-import java.lang.Object;
-import java.nio.file.Files;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import javax.json.*;
-import javax.json.stream.JsonGenerator;
-import com.google.gson.*;
-import java.io.*;
-import java.util.*;
-import org.json.simple.*;
-import org.json.simple.parser.*;
-import org.apache.*;
-import org.json.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class JavaApplication1 {
    public static void main(String[] args) {
@@ -18,7 +12,10 @@ public class JavaApplication1 {
 	   JSONParser parser = new JSONParser();
       try {
          Object obj = parser.parse(new FileReader("CES3063F20_LabelingProject_Input-1.json"));
+         Object cfg = parser.parse(new FileReader("config.json"));
          JSONObject jsonObject = (JSONObject)obj;
+         JSONObject jsonObject2 = (JSONObject)cfg;
+
          long datasetId = (long)jsonObject.get("dataset id");
          String datasetName = (String)jsonObject.get("dataset name");
          long max = (long)jsonObject.get("maximum number of labels per instance");
@@ -26,11 +23,13 @@ public class JavaApplication1 {
          Dataset dataset = new Dataset(datasetId,datasetName,max);
          
          JSONArray labels = (JSONArray)jsonObject.get("class labels");
+
+         JSONArray users = (JSONArray)jsonObject.get("Users");
         
          JSONArray instances = (JSONArray)jsonObject.get("instances");
   
-         System.out.println("Name: " + datasetId);
-         System.out.println("Course: " + datasetName);
+         System.out.println("Dataset Id: " + datasetId);
+         System.out.println("Dataset name: " + datasetName);
          System.out.println("maximum number of labels per instance: " + max);
          //System.out.println("Labels :" + labels);
        
@@ -48,9 +47,23 @@ public class JavaApplication1 {
            System.out.println(labelText);
 
           
-         }  
-   
-         for (Object o : instances)
+         }
+
+          for (Object o : users)
+          {
+              JSONObject user = (JSONObject) o;
+
+              long userId = (long)user.get("UserId");
+              String userName = (String)user.get("UserName");
+              long datasetsId = (long)user.get("datasets");
+              User userTemp = new User(userId,userName,datasetsId);
+              dataset.getUserList().add(userTemp);
+              System.out.println(userId);
+              System.out.println(userName);
+
+
+          }
+          for (Object o : instances)
          {
         	 JSONObject ins = (JSONObject) o;
 
@@ -64,17 +77,18 @@ public class JavaApplication1 {
  
          }  
          
- 
-         RandomLabellingClass user =new RandomLabellingClass(1,12345,"CSE-3063","RandomLabellingMechanism");
-         user.randomlyLabel(dataset);
-         for(Instance ins : dataset.getInstanceList()) {
-        	
-        	 for(Label lab : ins.getLabelList()) {
-        		 System.out.println(ins.getInstanceId() + " " + lab.getLabelID()+ " " + lab.getLabelText());
-        	 }
-        	 
-         }
-      
+        int userNumber =0;
+        while (userNumber < dataset.getUserList().size()) {
+            RandomLabellingClass user = new RandomLabellingClass(dataset.getUserList().get(userNumber));
+            user.randomlyLabel(dataset);
+            for (Instance ins : dataset.getInstanceList()) {
+
+                for (Label lab : ins.getLabelList()) {
+                    System.out.println(ins.getInstanceId() + " " + lab.getLabelID() + " " + lab.getLabelText());
+                }
+
+            }
+        }
       
          
         
