@@ -1,17 +1,22 @@
+import java.util.ArrayList;
+
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 public class User {
 	
 	private long id;
 	private String userName;
-	private long datasetId;
+	private ArrayList<Dataset> dataset = new ArrayList<Dataset>();
+	private ArrayList<Instance> labeled = new ArrayList<Instance>();
 	
 	
-	
-	public User(long id,String userName, long datasetId) {
+
+
+	public User(long id,String userName,ArrayList<Dataset> dataset) {
 		super();
 		this.id = id;
 		this.userName = userName;
-		this.datasetId = datasetId;
+		this.dataset = dataset;
 	}
 	
 	
@@ -28,11 +33,24 @@ public class User {
 		this.userName = userName;
 	}
 
-	public long getDatasetId() {
-		return datasetId;
+
+	public ArrayList<Dataset> getDataset() {
+		return dataset;
 	}
 
-	public void setDatasetId(long datasetId) {
-		this.datasetId = datasetId;
+
+	public void setDataset(ArrayList<Dataset> dataset) {
+		this.dataset = dataset;
 	}
+	
+	public ArrayList<Instance> getLabeled() {
+		return labeled;
+	}
+
+
+	public void setLabeled(ArrayList<Instance> labeled) {
+		this.labeled = labeled;
+	}
+
+
 }
