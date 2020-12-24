@@ -1,0 +1,44 @@
+{
+	"Datasets":	[
+		{
+			"Dataset_Path"	: "CES3063F20_LabelingProject_Input-1.json",
+			"Dataset_Id"	: 1,
+		}
+		{
+			"Dataset_Path"	: "CES3063F20_LabelingProject_Input-2.json",
+			"Dataset_Id"	: 2,
+		}
+	]
+	
+	"Users": [
+		{
+			"UserId"   :  1,
+			"UserName" :  "User1",
+			"datasets"   :  [
+				{
+					"User_Dataset_ID" : 1
+				}
+			]
+		},
+    
+		{
+			"UserId"   :  2,
+			"UserName" :  "User2",
+			"datasets"   :  [
+				{
+					"User_Dataset_ID" : 1
+				}
+			]
+		},
+		
+		{
+			"UserId"   :  3,
+			"UserName" :  "User3",
+			"datasets"   :  [
+				{
+					"User_Dataset_ID" : 1
+				}
+			]
+		}
+	]
+}
