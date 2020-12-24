@@ -44,8 +44,7 @@ public class Dataset {
 	        instanceList.add(instance);
 	    }
           
-	    
-	    
+	  
 	    public long getDatasetId() {
 			return datasetId;
 		}
