@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import org.json.simple.JSONObject;
+
 public class Instance {
     private  long instanceId;
     private String instanceText;
@@ -34,5 +36,14 @@ public class Instance {
   
     public void setLabelList(ArrayList<Label> labelList) {
         this.labelList = labelList;
+    }
+    
+    public JSONObject instanceToJSON() {
+
+        JSONObject jo = new JSONObject();
+        jo.put("instance", instanceText);
+        jo.put("id", instanceId);
+
+        return jo;
     }
 }
