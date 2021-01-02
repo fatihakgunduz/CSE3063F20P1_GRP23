@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 
 import org.json.simple.JSONObject;
@@ -43,6 +45,10 @@ public class Label {
     public Instance getInstance(long index){
          return instanceList.get((int)index);
     }
+   // public void prlongInstance(long index){
+     //   System.out.prlongf("Instance Id: %d\n", instanceList.get(index).getInstanceId);
+       // System.out.prlongf("Instance Id: %s\n", instanceList.get(index).getInstanceText);
+    //}
     public void removeInstance(long index){
         instanceList.remove((int) index);
     }
@@ -61,4 +67,9 @@ public class Label {
 
         return jo;
     }
+    //public void prlongInstances(){
+      //  for (Instance i : instanceList){
+        //    System.out.prlongf("Instance ID: %d\n", i.getInstanceId);
+          //  System.out.prlongf("Instance Text: %s\n",i.getInstanceText);
+      // }
     }
