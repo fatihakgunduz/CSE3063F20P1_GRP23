@@ -1,11 +1,11 @@
 {
 	"Datasets":	[
 		{
-			"Dataset_Path"	: "CES3063F20_LabelingProject_Input-1.json",
+			"Dataset_Path"	: "input1.json",
 			"Dataset_Id"	: 1,
 		}
 		{
-			"Dataset_Path"	: "CES3063F20_LabelingProject_Input-2.json",
+			"Dataset_Path"	: "input2.json",
 			"Dataset_Id"	: 2,
 		}
 	]
@@ -13,17 +13,23 @@
 	"Users": [
 		{
 			"UserId"   :  1,
-			"UserName" :  "User1",
+			"UserName" :  "Ali",
+			"HumanChecker" : 1,
+			"ConsistencyCheckProbability" : 0.10,
+			"password" : "123",				
 			"datasets"   :  [
-				{
-					"User_Dataset_ID" : 1
-				}
+				{"User_Dataset_ID" : 1},
+				{"User_Dataset_ID" : 2}
+
 			]
 		},
     
 		{
 			"UserId"   :  2,
 			"UserName" :  "User2",
+			"HumanChecker" : 0,
+			"ConsistencyCheckProbability" : 0.10,
+			"password" : "enbuyukfener",	
 			"datasets"   :  [
 				{
 					"User_Dataset_ID" : 1
@@ -34,6 +40,9 @@
 		{
 			"UserId"   :  3,
 			"UserName" :  "User3",
+			"HumanChecker" : 0,
+			"ConsistencyCheckProbability" : 0.10,
+			"password" : "123qwe",	
 			"datasets"   :  [
 				{
 					"User_Dataset_ID" : 1
