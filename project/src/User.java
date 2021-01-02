@@ -2,23 +2,36 @@ import java.util.ArrayList;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-public class User {
+public class User  {
 	
 	private long id;
 	private String userName;
+	private String password;
 	private ArrayList<Dataset> dataset = new ArrayList<Dataset>();
 	private ArrayList<Instance> labeled = new ArrayList<Instance>();
 	
+	public User() {
+		super();
+	}
+	private ArrayList<Long> datasetIds = new ArrayList<Long>();
+	
 	
 
 
-	public User(long id,String userName,ArrayList<Dataset> dataset) {
+	public User(long id,String userName,String password,ArrayList<Long> datasetIds) {
 		super();
 		this.id = id;
 		this.userName = userName;
+		this.password = password;
+		this.datasetIds = datasetIds;
+	}
+	public User(String userName, long id, String password, ArrayList<Dataset> dataset) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
 		this.dataset = dataset;
 	}
-	
 	
 	public long getId() {
 		return id;
@@ -50,6 +63,18 @@ public class User {
 
 	public void setLabeled(ArrayList<Instance> labeled) {
 		this.labeled = labeled;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public ArrayList<Long> getDatasetIds() {
+		return datasetIds;
+	}
+	public void setDatasetIds(ArrayList<Long> datasetIds) {
+		this.datasetIds = datasetIds;
 	}
 
 
