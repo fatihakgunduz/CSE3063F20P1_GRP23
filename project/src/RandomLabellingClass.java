@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 import java.util.*;
 
-public class RandomLabellingClass extends User {
+public class RandomLabellingClass extends BotUser {
 	
 	public RandomLabellingClass(User user) {
-		super(user.getId(),user.getUserName(),user.getDataset());
+		super(user.getUserName(),user.getId(),user.getPassword(),user.getDataset());
 		// TODO Auto-generated constructor stub
 	}
 	
 	public void randomlyLabel(User user){
+		System.out.println(user.getUserName());
 		Random random = new Random();
 		int returnInstanceProbability = 10;			//Simdilik 10 dedik configden cekilecek
 		int k = 0;
@@ -79,5 +80,6 @@ public class RandomLabellingClass extends User {
 			k++;			
 			}
 		}
+	
 	}
 }
