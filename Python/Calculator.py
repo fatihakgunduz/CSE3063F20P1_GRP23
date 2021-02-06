@@ -31,5 +31,3 @@ class Calculator:
         sum_grade = self.quiz_grade_adder(grades)
         grade = sum_grade/len(grades)
         return grade
-
-

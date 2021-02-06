@@ -9,5 +9,3 @@ class Quiz_Checker:
             if(students_quiz.answer_list[i].answer_text == correct_answers[i].answer_text):
                 students_quiz.question_list[i].correct()
             i += 1
-
-
