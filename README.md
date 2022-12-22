@@ -1,4 +1,4 @@
-# CSE3063F20P1_GRP23
+# Object Oriented Programming
 
 GROUP 23
 
